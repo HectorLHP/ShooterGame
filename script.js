@@ -26,8 +26,8 @@ class Raven {
     this.height = this.spriteHeight * this.sizeModifier;
     this.x = canvas.width;
     this.y = Math.random() * (canvas.height - this.height);
-    this.directionX = Math.random() * 20 - 10;
-    this.directionY = Math.random() * 5 - 2.5;
+    this.directionX = Math.random() * 15 - 2.5;
+    this.directionY = Math.random() * 2 - 1;
     this.markedForDeletion = false;
     this.image = new Image();
     this.image.src = './images/raven.png';
@@ -63,7 +63,9 @@ class Raven {
       else this.frame++;
       this.timeSinceFlap = 0;
     }
-    if (this.x < 0 - this.width) gameOver = true;
+    if (this.x < 0 - this.width) {
+      gameOver = true;
+    }
   }
 
   draw() {
